@@ -19,7 +19,10 @@ defmodule BlogProjectWeb.Router do
 
     get "/", PageController, :index
 
-    resources "/blogs", BlogController
+    resources "/blogs", BlogController do
+      post "/comment", BlogController, :add_comment
+    end
+
   end
 
   # Other scopes may use custom stacks.

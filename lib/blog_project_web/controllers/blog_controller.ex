@@ -1,8 +1,14 @@
 defmodule BlogProjectWeb.BlogController do
   use BlogProjectWeb, :controller
 
+  alias BlogProject.Repo
   alias BlogProject.Blogging
   alias BlogProject.Blogging.Blog
+  alias BlogProject.Comments.Comment
+
+
+
+
 
   def index(conn, _params) do
     blogs = Blogging.list_blogs()
@@ -59,4 +65,32 @@ defmodule BlogProjectWeb.BlogController do
     |> put_flash(:info, "Blog deleted successfully.")
     |> redirect(to: Routes.blog_path(conn, :index))
   end
+
+  def add_comment(conn, %{"comment" => comment_params, "blog_id" => blog_id}) do
+    blog =
+      blog_id
+      |> Blogs.get_blog!()
+      |> Repo.preload([:comments])
+    case Blogs.add_comment(blog_id, comment_params) do
+      {:ok, _comment} ->
+        conn
+        |> put_flash(:info, "Added comment!")
+        |> redirect(to: Routes.blog_path(conn, :show, blog))
+      {:error, _error} ->
+        conn
+        |> put_flash(:error, "Oops! Couldn't add comment!")
+        |> redirect(to: Routes.blog_path(conn, :show, blog))
+    end
+  end
+
+  def show(conn, %{"id" => id}) do
+    blog =
+      id
+      |> Blogs.get_blog!
+      |> Repo.preload([:comments])
+
+    changeset = Comment.changeset(%Comment{}, %{})
+    render(conn, "show.html", blog: blog, changeset: changeset)
+    end
+
 end
