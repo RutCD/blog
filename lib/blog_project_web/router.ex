@@ -20,7 +20,7 @@ defmodule BlogProjectWeb.Router do
     get "/", PageController, :index
 
     resources "/blogs", BlogController do
-      post "/comment", BlogController, :add_comment
+      post "/comment", CommentController, :add_comment
     end
 
   end

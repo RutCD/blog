@@ -7,10 +7,6 @@ defmodule BlogProjectWeb.BlogController do
   alias BlogProject.Comments.Comment
 
 
-
-
-
-
   def index(conn, _params) do
     blogs = Blogging.list_blogs()
     render(conn, "index.html", blogs: blogs)
@@ -70,22 +66,6 @@ defmodule BlogProjectWeb.BlogController do
     |> redirect(to: Routes.blog_path(conn, :index))
   end
 
-  def add_comment(conn, %{"comment" => comment_params, "blog_id" => blog_id}) do
-    blog =
-      blog_id
-      |> Blogging.get_blog!(preload: :comments)
 
-
-    case Blogging.Blog.add_comment(blog_id, comment_params) do
-      {:ok, _comment} ->
-        conn
-        |> put_flash(:info, "Added comment!")
-        |> redirect(to: Routes.blog_path(conn, :show, blog))
-      {:error, _error} ->
-        conn
-        |> put_flash(:error, "Oops! Couldn't add comment!")
-        |> redirect(to: Routes.blog_path(conn, :show, blog))
-    end
-  end
 
 end
