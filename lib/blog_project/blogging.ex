@@ -37,6 +37,8 @@ defmodule BlogProject.Blogging do
   """
   def get_blog!(id), do: Repo.get!(Blog, id)
 
+  def get_blog!(id, preload: assoc),
+    do: Blog |> Repo.get!(id) |> Repo.preload(assoc)
   @doc """
   Creates a blog.
 

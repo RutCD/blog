@@ -1,10 +1,11 @@
 defmodule BlogProjectWeb.BlogController do
   use BlogProjectWeb, :controller
 
-  alias BlogProject.Repo
+
   alias BlogProject.Blogging
   alias BlogProject.Blogging.Blog
   alias BlogProject.Comments.Comment
+
 
 
 
@@ -33,8 +34,11 @@ defmodule BlogProjectWeb.BlogController do
   end
 
   def show(conn, %{"id" => id}) do
-    blog = Blogging.get_blog!(id)
-    render(conn, "show.html", blog: blog)
+    blog = id |> Blogging.get_blog!(preload: :comments)
+
+
+    changeset = BlogProject.Comments.Comment.changeset(%Comment{}, %{})
+    render(conn, "show.html", blog: blog, changeset: changeset)
   end
 
   def edit(conn, %{"id" => id}) do
@@ -69,9 +73,10 @@ defmodule BlogProjectWeb.BlogController do
   def add_comment(conn, %{"comment" => comment_params, "blog_id" => blog_id}) do
     blog =
       blog_id
-      |> Blogs.get_blog!()
-      |> Repo.preload([:comments])
-    case Blogs.add_comment(blog_id, comment_params) do
+      |> Blogging.get_blog!(preload: :comments)
+
+
+    case Blogging.Blog.add_comment(blog_id, comment_params) do
       {:ok, _comment} ->
         conn
         |> put_flash(:info, "Added comment!")
@@ -82,15 +87,5 @@ defmodule BlogProjectWeb.BlogController do
         |> redirect(to: Routes.blog_path(conn, :show, blog))
     end
   end
-
-  def show(conn, %{"id" => id}) do
-    blog =
-      id
-      |> Blogs.get_blog!
-      |> Repo.preload([:comments])
-
-    changeset = Comment.changeset(%Comment{}, %{})
-    render(conn, "show.html", blog: blog, changeset: changeset)
-    end
 
 end
