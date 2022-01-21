@@ -23,6 +23,8 @@ defmodule BlogProjectWeb.Router do
       post "/comment", CommentController, :add_comment
     end
 
+    resources "/category", CategoryController
+
   end
 
   # Other scopes may use custom stacks.
