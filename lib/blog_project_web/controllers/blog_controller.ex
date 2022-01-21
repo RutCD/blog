@@ -4,7 +4,7 @@ defmodule BlogProjectWeb.BlogController do
 
   alias BlogProject.Blogging
   alias BlogProject.Blogging.Blog
-  alias BlogProject.Comments.Comment
+  alias BlogProject.Social.Comment
 
 
   def index(conn, _params) do
@@ -33,7 +33,7 @@ defmodule BlogProjectWeb.BlogController do
     blog = id |> Blogging.get_blog!(preload: :comments)
 
 
-    changeset = BlogProject.Comments.Comment.changeset(%Comment{}, %{})
+    changeset = Comment.changeset(%Comment{}, %{})
     render(conn, "show.html", blog: blog, changeset: changeset)
   end
 

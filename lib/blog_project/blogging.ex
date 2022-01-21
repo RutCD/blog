@@ -103,4 +103,5 @@ defmodule BlogProject.Blogging do
   def change_blog(%Blog{} = blog, attrs \\ %{}) do
     Blog.changeset(blog, attrs)
   end
+
 end

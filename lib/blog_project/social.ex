@@ -1,4 +1,4 @@
-defmodule BlogProject.Comments do
+defmodule BlogProject.Social do
   @moduledoc """
   The Comments context.
   """
@@ -6,7 +6,7 @@ defmodule BlogProject.Comments do
   import Ecto.Query, warn: false
   alias BlogProject.Repo
 
-  alias BlogProject.Comments.Comment
+  alias BlogProject.Social.Comment
 
   @doc """
   Returns the list of comments.
