@@ -1,0 +1,23 @@
+<h1>Show Category</h1>
+
+<ul>
+
+  <li>
+    <strong>Place:</strong>
+    <%= @category.place %>
+  </li>
+
+  <li>
+    <strong>Description:</strong>
+    <%= @category.description %>
+  </li>
+
+  <li>
+    <strong>Price:</strong>
+    <%= @category.price %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.category_path(@conn, :edit, @category) %></span> |
+<span><%= link "Back", to: Routes.category_path(@conn, :index) %></span>
