@@ -126,8 +126,15 @@
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	padding: 0.5em;
-	border-bottom: 1px solid lightgrey;
+	border-bottom: 1px solid rgb(165, 164, 164);
 }
 .comment.header {
 	font-weight: bold;
+}
+
+div {
+  background-color: rgb(235, 231, 231);
+  width: auto;
+  padding: 20px;
+  margin: 5px;
 }
