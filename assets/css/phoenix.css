@@ -18,9 +18,12 @@ h6{font-size: 1.4rem; letter-spacing: 0; line-height: 1.2}
 pre{padding: 1em;}
 
 .title{
-  text-align: center;
+  
    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
    font-size: 60px;
+ 
+  
+ 
 }
 
 
@@ -59,8 +62,8 @@ pre{padding: 1em;}
 }
 
 img{
-  width: 200px;
-  height: 200px;
+  width: 80px;
+  height: 80px;
   padding: 0px;
  
 }
@@ -68,9 +71,8 @@ img{
 /* Headers */
 header {
   width: 100%;
-  background:  #daf19b;
-  border-bottom: 1px solid #eaeaea;
-  margin-bottom: 2rem;
+  background:   #f4f5f6;
+  margin-bottom: 1rem;
 }
 
 header nav ul,
@@ -89,24 +91,38 @@ header nav a {
   display: block;
 }
 
+/*Desing header*/
+
+.dbody{
+  background-color: #f4f5f6;
+}
+
+
+
 body{
   background-color: #daf19b;
 }
 
 a:link, a:visited {
-  background-color: #1e4fb8;
-  color: white;
+  background-color: #f4f5f6;;
+  color: rgb(180, 175, 179);
   padding: 5px 5px;
   text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  border-bottom: 1px solid rgb(165, 164, 164);
+  
 
 }
 
+li{
+  display: inline; 
+  padding: 3%;
+ 
+
+  float: right;
+  
+}
 
 a:hover, a:active {
-  background-color: rgb(66, 70, 75);
+  color: rgb(255, 29, 199);
 }
 
 span{
@@ -126,7 +142,7 @@ span{
 
  
 .contact{
- background-color: #90c586;
+ background-color:  #f4f5f6;
   text-align: center;
   padding: 20px;
   margin: 0px;

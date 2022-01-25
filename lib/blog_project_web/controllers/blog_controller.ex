@@ -66,7 +66,10 @@ defmodule BlogProjectWeb.BlogController do
     |> redirect(to: Routes.blog_path(conn, :index))
   end
 
-
+  def design(conn, _params) do
+    blogs = Blogging.list_blogs()
+    render(conn, "blog_design.html", blogs: blogs)
+  end
 
 
 end
