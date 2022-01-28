@@ -27,20 +27,14 @@ pre{padding: 1em;}
  
 }
 
-
-
-
-
-
 /* Phoenix promo and logo */
-
-
 
 
 img{
   width: 80px;
   height: 80px;
   float: left;
+  border-radius: 8px;
   
  
 }
@@ -85,10 +79,11 @@ body{
   
 }
 a:link, a:visited {
-  background-color: #f4f5f6;;
+  background-color: #f4f5f6;
   color: rgb(180, 175, 179);
   padding: 5px 5px;
   text-align: center;
+  
   
 
 }
@@ -96,15 +91,18 @@ a:link, a:visited {
 li{
   display: inline; 
   padding: 3%;
- 
-
   float: right;
+  
   
 }
 
 a:hover, a:active {
+  /*color: rgb(255, 29, 199);*/
   color: rgb(255, 29, 199);
+  
 }
+
+
 
 span{
   cursor:pointer
@@ -114,8 +112,6 @@ span{
     flex-direction: row;
   }
   
-  
-  
 
  
 .contact{
@@ -123,7 +119,7 @@ span{
   text-align: center;
   padding: 20px;
   margin: 0px;
- 
+
   }
 
    .div1{
@@ -156,7 +152,9 @@ span{
   img.bimg{
   
   width: 300px;
-  height: 300px
+  height: 300px;
+  border-radius: 5px;
+  
 
  }
 
@@ -172,7 +170,12 @@ span{
 
  
  }
-} 
- 
+ .bimg:hover{
+  filter: opacity(.8);
+  -webkit-transform:scale(.8);
+  transform:scale(.8);
+  overflow:hidden;
+}
+}
  
  
