@@ -140,7 +140,7 @@ span{
   
   float: left;
   width: 33.33%;
-  padding: 30px;
+  padding: 20px;
   
  }
 
@@ -148,6 +148,7 @@ span{
   content: "";
   display: table;
   clear: both;
+  
 }
   img.bimg{
   
@@ -155,6 +156,7 @@ span{
   height: 300px;
   border-radius: 5px;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  
 
  }
 

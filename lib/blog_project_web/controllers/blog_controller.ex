@@ -32,7 +32,6 @@ defmodule BlogProjectWeb.BlogController do
   def show(conn, %{"id" => id}) do
     blog = id |> Blogging.get_blog!(preload: :comments)
 
-
     changeset = Comment.changeset(%Comment{}, %{})
     render(conn, "show.html", blog: blog, changeset: changeset)
   end

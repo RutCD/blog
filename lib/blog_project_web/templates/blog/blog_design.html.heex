@@ -15,62 +15,28 @@
         <h2 >Share and live the experience at the same moment of comment the differents post of you friends</h2>
       </div>
     </div>
-
+ 
+           
        <section>
+        
+     
+         <div class="row">
+           
+    
+              <%= for blog <- @blogs  do %>   
+              <div class="liblogs">
+              <img  class="bimg" ; src={Routes.static_path(@conn, "/images/blogs.png")} alt="blog"/>
+              <%= link blog.name , to: Routes.blog_path(@conn, :show, blog)%>   
+              
+              
+             </div>
+             <% end %> 
+         </div>
 
-      <div class="row">
-        <div class="liblogs">
-          <a href="http://localhost:4000/blogs/2"><img  class="bimg" ; src={Routes.static_path(@conn, "/images/blogs.png")} alt="blog"/></a>
-             <div class="desc"> Hi! This is my blog</div>
-        </div>
-
-
-        <div class="liblogs">
-          <a href="http://localhost:4000/blogs/3"><img  class="bimg" ; src={Routes.static_path(@conn, "/images/blogs3.png")} alt="blog"/></a>
-            <div class="desc"> Hi! This is my blog</div>
-        </div>
-
-        <div class="liblogs">
-          <a href="http://localhost:4000/blogs/4"><img  class="bimg" ; src={Routes.static_path(@conn, "/images/blogs2.png")} alt="blog"/></a>
-            <div class="desc"> Hi! This is my blog</div>
-        </div>
-      </div>
-  
-        <div class="row">
-          <div class="liblogs">
-            <a href="http://localhost:4000/blogs/5"><img  class="bimg" ; src={Routes.static_path(@conn, "/images/blogs.png")} alt="blog"/></a>
-              <div class="desc"> Hi! This is my blog</div>
-          </div>
-
-          <div class="liblogs">
-            <a href="http://localhost:4000/blogs/6"><img  class="bimg" ; src={Routes.static_path(@conn, "/images/blogs3.png")} alt="blog"/></a>
-              <div class="desc"> Hi! This is my blog</div>
-          </div>
-
-          <div class="liblogs">
-            <a href="http://localhost:4000/blogs/7"><img  class="bimg" ; src={Routes.static_path(@conn, "/images/blogs2.png")} alt="blog"/></a>
-             <div class="desc"> Hi! This is my blog</div>
-          </div>
-        </div>
-
-
-          <div class="row">
-            <div class="liblogs">
-              <a href="http://localhost:4000/blogs/8"><img  class="bimg" ; src={Routes.static_path(@conn, "/images/blogs.png")} alt="blog"/></a>
-                <div class="desc"> Hi! This is my blog</div>
-            </div>
-  
-            <div class="liblogs">
-              <a href="http://localhost:4000/blogs/9"><img  class="bimg" ; src={Routes.static_path(@conn, "/images/blogs3.png")} alt="blog"/></a>
-                <div class="desc"> Hi! This is my blog</div>
-            </div>
-
-            <div class="liblogs">
-              <a href="http://localhost:4000/blogs/10"><img  class="bimg" ; src={Routes.static_path(@conn, "/images/blogs2.png")} alt="blog"/></a>
-                <div class="desc"> Hi! This is my blog</div>
-            </div>
-          </div>
-      </section>
-
-
+              
+             
+   
+ </section>
+ 
+      
 </body>

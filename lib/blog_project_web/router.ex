@@ -26,7 +26,10 @@ defmodule BlogProjectWeb.Router do
     end
 
     resources "/category", CategoryController
+
     get "/design" , BlogController , :design
+
+
 
   end
 
