@@ -134,10 +134,15 @@
 }
 
 div.box{
-  background-color: rgb(235, 231, 231);
+  background-color:#f4f5f6;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  width: 650px;
-  padding: 100px;
-  margin: 100px;
+  width: 700px;
+  padding: 80px;
+  margin: 80px;
+}
+
+div.content{
+  
+  height: 100px; 
 }
 
