@@ -19,11 +19,17 @@ defmodule BlogProjectWeb.Router do
 
     get "/", PageController, :index
 
+
     resources "/blogs", BlogController do
       post "/comment", CommentController, :add_comment
+
     end
 
     resources "/category", CategoryController
+
+    get "/design" , BlogController , :design
+
+
 
   end
 

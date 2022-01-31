@@ -1,0 +1,42 @@
+
+   
+<body class="dbody">
+
+
+  <h1 class="title"><b>The Blog</b></h1>
+
+    <div class="row">
+      <div class="div1">
+          <img  class="bodyimg" ; src={Routes.static_path(@conn, "/images/people.png")} alt="people"/>
+      </div>
+
+      <div  class="div1">
+        <h1>Create you Blog and share with us you experience</h1>
+        <h2 >Share and live the experience at the same moment of comment the differents post of you friends</h2>
+      </div>
+    </div>
+ 
+           
+       <section>
+        
+     
+         <div class="row">
+           
+    
+              <%= for blog <- @blogs  do %>   
+              <div class="liblogs">
+              <img  class="bimg" ; src={Routes.static_path(@conn, "/images/blogs.png")} alt="blog"/> 
+              <div class="desc">Hi I am <b><%= link blog.name , to: Routes.blog_path(@conn, :show, blog)%></b>! this is my blog</div>
+              
+              
+             </div>
+             <% end %> 
+         </div>
+
+              
+             
+   
+ </section>
+ 
+      
+</body>

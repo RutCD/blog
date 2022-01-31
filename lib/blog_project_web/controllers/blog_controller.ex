@@ -32,7 +32,6 @@ defmodule BlogProjectWeb.BlogController do
   def show(conn, %{"id" => id}) do
     blog = id |> Blogging.get_blog!(preload: :comments)
 
-
     changeset = Comment.changeset(%Comment{}, %{})
     render(conn, "show.html", blog: blog, changeset: changeset)
   end
@@ -66,7 +65,10 @@ defmodule BlogProjectWeb.BlogController do
     |> redirect(to: Routes.blog_path(conn, :index))
   end
 
-
+  def design(conn, _params) do
+    blogs = Blogging.list_blogs()
+    render(conn, "blog_design.html", blogs: blogs)
+  end
 
 
 end

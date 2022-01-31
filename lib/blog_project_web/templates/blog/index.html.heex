@@ -17,6 +17,7 @@
       <td><%= blog.content %></td>
 
       <td>
+       
         <span><%= link "Show", to: Routes.blog_path(@conn, :show, blog) %></span>
         <span><%= link "Edit", to: Routes.blog_path(@conn, :edit, blog) %></span>
         <span><%= link "Delete", to: Routes.blog_path(@conn, :delete, blog), method: :delete, data: [confirm: "Are you sure?"] %></span>

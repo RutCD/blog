@@ -8,22 +8,28 @@
     <%= live_title_tag assigns[:page_title] || "BlogProject", suffix: " · Phoenix Framework" %>
     <link phx-track-static rel="stylesheet" href={Routes.static_path(@conn, "/assets/app.css")}/>
     <script defer phx-track-static type="text/javascript" src={Routes.static_path(@conn, "/assets/app.js")}></script>
-    <script src="https://kit.fontawesome.com/d32f80270b.js" crossorigin="anonymous"></script>
-  </head>
-  <body>
-    <header>
-      <img class="imagelogo" src={Routes.static_path(@conn, "/images/Blog Travel.png")} alt="Logo"/>
-      
-    </header>
-    <%= @inner_content %>
+    <script src="https://kit.fontawesome.com/d32f80270b.js" crossorigin="anonymous"></script>  
+  
+     
+    </head>
 
+      <body>
+        <header>
     
-
-
-    <footer  class="contact" >
-      <i class="fa fa-facebook-official w3-hover-opacity"></i>
-      <i class="fa fa-instagram w3-hover-opacity"></i>
-      <i class="fa fa-twitter w3-hover-opacity"></i>
-    </footer>
-  </body>
+           <div class="imagelogo">
+              <img src={Routes.static_path(@conn, "/images/dlogo.png")} alt="Logo"/>
+     
+              <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#category">Category</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#about">About</a></li>
+              </ul>
+            </div>
+  
+        </header>
+        <%= @inner_content %>
+ 
+       </body>
+  
 </html>
