@@ -25,8 +25,8 @@
     
               <%= for blog <- @blogs  do %>   
               <div class="liblogs">
-              <img  class="bimg" ; src={Routes.static_path(@conn, "/images/blogs.png")} alt="blog"/>
-              <%= link blog.name , to: Routes.blog_path(@conn, :show, blog)%>   
+              <img  class="bimg" ; src={Routes.static_path(@conn, "/images/blogs.png")} alt="blog"/> 
+              <div class="desc">Hi I am <b><%= link blog.name , to: Routes.blog_path(@conn, :show, blog)%></b>! this is my blog</div>
               
               
              </div>

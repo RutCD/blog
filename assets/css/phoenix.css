@@ -88,6 +88,8 @@ a:link, a:visited {
 
 }
 
+
+  
 li{
   display: inline; 
   padding: 3%;
@@ -102,6 +104,11 @@ a:hover, a:active {
   
 }
 
+ div.desc a:hover, a:active {
+  /*color: rgb(255, 29, 199);*/
+  color: rgb(130, 125, 211);
+  
+}
 
 
 span{
@@ -141,10 +148,10 @@ span{
   float: left;
   width: 33.33%;
   padding: 20px;
-  
+ 
  }
 
- .row:after {
+ .row{
   content: "";
   display: table;
   clear: both;
@@ -155,6 +162,7 @@ span{
   width: 300px;
   height: 300px;
   border-radius: 5px;
+  padding-bottom: 10px;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   
 
@@ -163,8 +171,9 @@ span{
  div.desc {
   padding: 15px;
   text-align: center;
-  font-size: 30px;
+  font-size: 20px;
   margin: 5px;
+
 }
  
  @media screen and (max-width:600px) {
