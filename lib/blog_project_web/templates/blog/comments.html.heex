@@ -1,14 +1,16 @@
-<h3>Comments</h3>
+<div  class="boxcomments">
+<h1 class="commentcolor">Comments</h1>
 <div class="comments">
-	<div class="comment header">
-		<div>Name</div>
-		<div>Content</div>
-		
-	</div>
+
+
 	<%= for comment <- @blog.comments do %>
-	<div class="comment">
-		<div><%= comment.name %></div>
-		<div><%= comment.text%></div>
-	</div>
+	<p class="round">
+	   
+		 <b><%= comment.name%> : </b>
+		 <%= comment.text%>
+	
+	</p>
 	<% end %>
+	
+</div>
 </div>

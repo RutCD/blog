@@ -21,14 +21,14 @@
 </div>
 
 
-<h2>Create a new comment</h2>
-
-<%= render "comment_form.html", blog: @blog, changeset: @changeset, action:
-Routes.blog_comment_path(@conn, :add_comment, @blog) %>
-<hr>
-<%= render "comments.html", blog: @blog %>
-
 <span><%= link "Edit", to: Routes.blog_path(@conn, :edit, @blog) %></span> |
 <span><%= link "Back", to: Routes.blog_path(@conn, :index) %></span> |
 <span><%= link "Home design", to: Routes.blog_path(@conn, :design) %></span>
+</div>
+
+<div>
+
+<%= render "comment_form.html", blog: @blog, changeset: @changeset, action:
+Routes.blog_comment_path(@conn, :add_comment, @blog) %>
+<%= render "comments.html", blog: @blog %>
 </div>
