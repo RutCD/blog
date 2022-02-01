@@ -18,7 +18,6 @@
 
 </ul>
 
-</div>
 
 
 <span><%= link "Edit", to: Routes.blog_path(@conn, :edit, @blog) %></span> |
@@ -26,9 +25,11 @@
 <span><%= link "Home design", to: Routes.blog_path(@conn, :design) %></span>
 </div>
 
-<div>
+
+<%= render "comments.html", conn: @conn, blog: @blog %>
 
 <%= render "comment_form.html", blog: @blog, changeset: @changeset, action:
 Routes.blog_comment_path(@conn, :add_comment, @blog) %>
-<%= render "comments.html", blog: @blog %>
+<div>
+</div>
 </div>

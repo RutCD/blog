@@ -1,16 +1,15 @@
-<div  class="boxcomments">
+
 <h1 class="commentcolor">Comments</h1>
 <div class="comments">
 
 
 	<%= for comment <- @blog.comments do %>
-	<p class="round">
-	   
-		 <b><%= comment.name%> : </b>
-		 <%= comment.text%>
-	
-	</p>
+	<div class="">
+	<img  class="commentimg" src={Routes.static_path(@conn, "/images/comment1.png")} alt="blog"/> 
+	<p class="comment-name"><%= comment.name%></p>
+	<p class="comment-text"><%= comment.text%></p>
+	</div>
 	<% end %>
 	
 </div>
-</div>
+

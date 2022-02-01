@@ -128,33 +128,20 @@
 	padding: 0.5em;	
 }
 
-p.round {
-  border: 1px solid rgb(189, 188, 188);
-  border-radius: 8px;
-  padding: 5px;
-}
+
 
 div.box{
-  background-color:#f4f5f6;
+  
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   width: 700px;
   padding: 80px;
   margin: 80px;
 }
 
-div.boxcreate{
-  
-  background-image: url("/images/create(1).png");
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  width: 700px;
-  padding: 80px;
-  margin: 80px;
-  
-}
+
 
 div.boxcomments{
   
-  background-image: url("/images/comments.png");
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   width: 700px;
   padding: 80px;

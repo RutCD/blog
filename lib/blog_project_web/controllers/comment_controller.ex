@@ -17,12 +17,16 @@ defmodule BlogProjectWeb.CommentController do
       {:ok, _comment} ->
         conn
         |> put_flash(:info, "Added comment!")
-        |> redirect(to: Routes.blog_path(conn, :show, blog))
+        |> redirect(to: Routes.blog_path(conn, :show, blog: blog))
       {:error, _error} ->
         conn
         |> put_flash(:error, "Oops! Couldn't add comment!")
-        |> redirect(to: Routes.blog_path(conn, :show, blog))
+        |> redirect(to: Routes.blog_path(conn, :show))
       end
+
+
     end
+
+
 
 end
