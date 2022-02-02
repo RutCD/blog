@@ -1,26 +1,35 @@
 <div class="box">
-<h1>Show Blog</h1>
+<h1 class="titleb"><b>Show Blog</b></h1>
 
+<div class="content">
 <ul>
 
-  <li>
-    <strong>Name:</strong>
-    <%= @blog.name %>
+  <li class="contentn">
+  
+    <strong ><h1 class="contentn"><%= @blog.name %></h1></strong>
+    
   </li>
 
   <li>
     <strong>Content:</strong>
     <%= @blog.content %>
+    <hr>
   </li>
 
 </ul>
 
-<%= render "comment_form.html", blog: @blog, changeset: @changeset, action:
-Routes.blog_comment_path(@conn, :add_comment, @blog) %>
 
-<%= render "comments.html", blog: @blog %>
 
 <span><%= link "Edit", to: Routes.blog_path(@conn, :edit, @blog) %></span> |
-<span><%= link "Back", to: Routes.blog_path(@conn, :index) %></span>
+<span><%= link "Back", to: Routes.blog_path(@conn, :index) %></span> |
 <span><%= link "Home design", to: Routes.blog_path(@conn, :design) %></span>
+</div>
+
+
+<%= render "comments.html", conn: @conn, blog: @blog %>
+
+<%= render "comment_form.html", blog: @blog, changeset: @changeset, action:
+Routes.blog_comment_path(@conn, :add_comment, @blog) %>
+<div>
+</div>
 </div>

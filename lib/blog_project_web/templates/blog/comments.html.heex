@@ -1,13 +1,15 @@
-<h3>Comments:</h3>
+
+<h1 class="commentcolor">Comments</h1>
 <div class="comments">
-	<div class="comment header">
-		<div>Name</div>
-		<div>Content</div>
-	</div>
+
+
 	<%= for comment <- @blog.comments do %>
-	<div class="comment">
-		<div><%= comment.name %></div>
-		<div><%= comment.text%></div>
+	<div class="">
+	<img  class="commentimg" src={Routes.static_path(@conn, "/images/comment1.png")} alt="blog"/> 
+	<p class="comment-name"><%= comment.name%></p>
+	<p class="comment-text"><%= comment.text%></p>
 	</div>
 	<% end %>
+	
 </div>
+
